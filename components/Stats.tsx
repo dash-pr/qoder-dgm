@@ -7,21 +7,27 @@ export default function Stats() {
   ];
 
   return (
-    <section id="stats" className="bg-muted py-16 px-8">
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-0">
-        {stats.map((stat, index) => (
-          <div
-            key={index}
-            className={`text-center p-8 ${
-              index < stats.length - 1 ? "md:border-r border-border" : ""
-            } ${index < stats.length - 1 ? "border-b md:border-b-0 border-border" : ""}`}
-          >
-            <span className="block font-serif text-5xl font-semibold text-accent mb-2">
-              {stat.number}
-            </span>
-            <span className="text-muted-fg text-[0.95rem]">{stat.label}</span>
-          </div>
-        ))}
+    <section className="py-24 border-t border-border">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className={`text-center p-8 ${
+                index < stats.length - 1 ? "md:border-r border-border" : ""
+              } ${
+                index < stats.length - 1 ? "border-b md:border-b-0 border-border" : ""
+              }`}
+            >
+              <div className="font-serif text-[clamp(2rem,4vw,3rem)] font-normal leading-none text-accent mb-2">
+                {stat.number}
+              </div>
+              <div className="font-mono text-[0.7rem] font-medium tracking-[0.15em] uppercase text-muted-fg">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,57 +1,75 @@
 export default function HowItWorks() {
   const steps = [
     {
-      number: "I",
-      title: "Discovery & Analysis",
+      num: "I",
+      title: "You provide the intent",
       description:
-        "The agent scans your existing IT environment, identifies integrations, and maps dependencies automatically.",
+        "One sentence: which SaaS, how many users, which region. The agent handles the rest.",
     },
     {
-      number: "II",
-      title: "Intelligent Planning",
+      num: "II",
+      title: "Agent orchestrates discovery",
       description:
-        "Generates an optimized sequence with conflict detection, compliance checks, and security review routing.",
+        "Scans your existing IT environment, maps dependencies, identifies integration points and conflicts automatically.",
     },
     {
-      number: "III",
-      title: "Human-in-the-Loop Gates",
+      num: "III",
+      title: "You approve at decision gates",
       description:
-        "Critical steps require stakeholder approval (CISO, Legal, Procurement) before execution proceeds.",
+        "Human-in-the-loop at every governance checkpoint. CISO, procurement, legal — routed automatically, not manually chased.",
     },
     {
-      number: "IV",
-      title: "Execution & Handoff",
+      num: "IV",
+      title: "Full audit trail on completion",
       description:
-        "Automated provisioning, testing, and documentation. Complete audit trail and runbooks delivered.",
+        "Who approved what, when, and why. Runbook and incident response playbook generated automatically — no institutional knowledge lost.",
     },
   ];
 
   return (
-    <section id="how-it-works" className="py-40 px-8">
-      <div className="max-w-[1400px] mx-auto">
+    <section id="how" className="py-32 border-t border-border">
+      <div className="container">
         <div className="section-label">
-          <span>Architecture</span>
+          <span className="rule"></span>
+          <span className="text">The Process</span>
+          <span className="rule"></span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-20 items-start mt-16">
           {/* Left: Steps */}
           <div>
-            <h2 className="font-serif text-4xl md:text-5xl mb-12">
-              Four steps. Zero manual intervention.
+            <h2 className="font-serif text-[clamp(1.75rem,3vw,2.5rem)] font-normal leading-[1.2] tracking-tight mb-6">
+              One input.
+              <br />
+              <em className="italic text-accent">
+                Structured, governed,
+                <br />
+                repeatable
+              </em>{" "}
+              output.
             </h2>
+            <p className="text-muted-fg max-w-[28rem] mb-12 mt-6">
+              Enterprise IT onboarding isn't just complicated — it's the same
+              checklist done manually, every time, with accountability gaps that
+              create risk.
+            </p>
 
-            <div className="space-y-8">
-              {steps.map((step) => (
+            <div className="flex flex-col gap-0">
+              {steps.map((step, index) => (
                 <div
-                  key={step.number}
-                  className="flex gap-6 pl-0 hover:pl-4 transition-all duration-200"
+                  key={index}
+                  className={`flex gap-6 p-6 transition-all duration-200 hover:pl-8 ${
+                    index === 0 ? "border-t border-border" : ""
+                  } border-b border-border`}
                 >
-                  <div className="font-serif text-4xl text-accent font-semibold min-w-[50px]">
-                    {step.number}
+                  <div className="font-serif text-2xl text-accent opacity-50 flex-shrink-0 w-8 leading-none">
+                    {step.num}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                    <p className="text-muted-fg leading-relaxed">
+                    <h3 className="font-serif text-lg font-semibold mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-[0.9rem] text-muted-fg leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -61,38 +79,63 @@ export default function HowItWorks() {
           </div>
 
           {/* Right: Comparison Card */}
-          <div className="lg:sticky lg:top-32">
-            <div className="bg-card border border-border border-t-[3px] border-t-accent rounded-lg p-8 shadow-sm">
-              <h4 className="font-serif text-2xl mb-8">Before & After</h4>
+          <div className="lg:sticky lg:top-24">
+            <div className="bg-card border border-border border-t-2 border-t-accent rounded-lg p-8 shadow-[0_4px_12px_rgba(26,26,26,0.06)]">
+              <div className="font-mono text-[0.65rem] font-medium tracking-[0.15em] uppercase text-accent mb-4">
+                Before & After
+              </div>
+              <h3 className="font-serif text-2xl font-normal leading-tight mb-4">
+                Time to go-live
+              </h3>
+              <p className="text-[0.875rem] text-muted-fg mb-6">
+                Mid-size enterprise, 500-user SaaS rollout with SSO + security
+                review
+              </p>
 
               {/* Timeline bars */}
-              <div className="mb-8">
-                <div className="mb-4">
-                  <span className="block font-semibold mb-2">Traditional</span>
-                  <div className="h-10 bg-gradient-to-r from-muted to-border rounded flex items-center px-4 font-mono text-sm">
-                    4 months
+              <div>
+                <div className="flex items-center gap-3 py-3 border-b border-border">
+                  <div className="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-muted-fg w-16 flex-shrink-0">
+                    Before
+                  </div>
+                  <div className="flex-1 h-1 bg-muted rounded overflow-hidden">
+                    <div className="h-full bg-border rounded w-full"></div>
+                  </div>
+                  <div className="font-mono text-[0.7rem] font-medium w-10 text-right flex-shrink-0 text-muted-fg">
+                    4 mo.
                   </div>
                 </div>
-                <div>
-                  <span className="block font-semibold mb-2">
-                    With Onboard
-                  </span>
-                  <div className="h-10 bg-gradient-to-r from-accent-2 to-accent rounded flex items-center px-4 font-mono text-sm text-white max-w-[40%]">
-                    2 weeks
+                <div className="flex items-center gap-3 py-3">
+                  <div className="font-mono text-[0.65rem] tracking-[0.1em] uppercase text-muted-fg w-16 flex-shrink-0">
+                    After
+                  </div>
+                  <div className="flex-1 h-1 bg-muted rounded overflow-hidden">
+                    <div className="h-full bg-accent rounded w-[12%]"></div>
+                  </div>
+                  <div className="font-mono text-[0.7rem] font-medium w-10 text-right flex-shrink-0 text-accent">
+                    2 wk.
                   </div>
                 </div>
               </div>
 
-              {/* Cost comparison */}
-              <div className="border-t border-border pt-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span>External Consultants</span>
-                  <span className="line-through text-muted-fg">$300K</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Onboard Agent</span>
-                  <span className="text-accent font-semibold">Included</span>
-                </div>
+              {/* Cost */}
+              <div className="h-px bg-border my-6"></div>
+              <div className="font-mono text-[0.65rem] font-medium tracking-[0.15em] uppercase text-accent mb-3">
+                Cost
+              </div>
+              <div className="flex justify-between items-baseline mb-1">
+                <span className="text-[0.875rem] text-muted-fg">
+                  Consulting fees
+                </span>
+                <span className="font-serif text-xl line-through text-muted-fg">
+                  $300K
+                </span>
+              </div>
+              <div className="flex justify-between items-baseline">
+                <span className="text-[0.875rem] text-muted-fg">
+                  With Onboard
+                </span>
+                <span className="font-serif text-2xl text-accent">Included</span>
               </div>
             </div>
           </div>

@@ -2,47 +2,49 @@ export default function Testimonials() {
   const testimonials = [
     {
       quote:
-        "We rolled out Microsoft 365 across 12 regional offices in Japan in under two weeks. Our previous vendor quoted us 6 months and ¥40M.",
-      author: "Head of IT — Tokyo Manufacturing Co.",
+        "We used to spend 3 months coordinating between Okta, Salesforce, and our security team. Onboard had the entire plan generated with conflict analysis before our first vendor call.",
+      author: "Head of IT Infrastructure",
+      company: "Financial Services, Tokyo — 2,400 employees",
     },
     {
       quote:
-        "The audit trail alone saved us during our ISO 27001 certification. Every configuration change was documented with approval chains intact.",
-      author: "CISO — Osaka Financial Services",
+        "The governance routing alone saved us 6 weeks. Instead of chasing CISO and Legal over email, approvals were queued and documented automatically. That's the part that impresses auditors.",
+      author: "CISO",
+      company: "Manufacturing Enterprise, Osaka — 8,000 employees",
     },
     {
       quote:
-        "Onboard discovered integration conflicts our team missed three times. The agent prevented what would have been a catastrophic rollout failure.",
-      author: "VP Engineering — Tokyo Tech Startup",
+        "Our IT manager left mid-implementation. With the old process, we would have lost everything. With Onboard, the full runbook and audit trail meant the next person picked up exactly where we left off.",
+      author: "VP of Operations",
+      company: "SaaS company, Tokyo — 650 employees",
     },
   ];
 
   return (
-    <section id="testimonials" className="py-40 px-8">
-      <div className="max-w-[1400px] mx-auto">
+    <section className="py-32 border-t border-border">
+      <div className="container">
         <div className="section-label">
-          <span>Customer Stories</span>
+          <span className="rule"></span>
+          <span className="text">From the Field</span>
+          <span className="rule"></span>
         </div>
-
-        <h2 className="font-serif text-4xl md:text-5xl text-center mb-16">
-          Trusted by leading enterprises
-        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-card border border-border rounded-lg p-8"
+              className="bg-card border border-border rounded-lg p-8 shadow-sm transition-all duration-200 hover:shadow-[0_4px_12px_rgba(26,26,26,0.06)]"
             >
-              <div className="font-serif text-6xl text-accent leading-none mb-4">
-                &quot;
+              <div className="font-serif text-6xl leading-none text-accent opacity-40 mb-2">
+                "
               </div>
-              <p className="font-serif italic text-lg leading-relaxed mb-6">
+              <p className="font-serif italic text-base leading-[1.7] text-fg mb-6">
                 {testimonial.quote}
               </p>
-              <div className="h-px bg-border mb-4" />
-              <div className="font-mono text-sm text-muted-fg">
-                {testimonial.author}
+              <div className="h-px bg-border mb-4"></div>
+              <div className="font-mono text-[0.65rem] font-medium tracking-[0.12em] uppercase text-muted-fg">
+                <span className="block text-fg mb-1">{testimonial.author}</span>
+                {testimonial.company}
               </div>
             </div>
           ))}

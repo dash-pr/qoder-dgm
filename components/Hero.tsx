@@ -1,35 +1,37 @@
 export default function Hero() {
   return (
-    <section id="hero" className="relative pt-48 pb-32 px-8 text-center">
-      {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(184,134,11,0.03),transparent_70%)] pointer-events-none -z-10" />
+    <section className="relative pt-40 pb-32 text-center">
+      <div className="container">
+        <div className="inline-flex items-center gap-3 mb-8 animate-[fadeUp_0.7s_ease-out]">
+          <span className="w-8 h-px bg-accent"></span>
+          <span className="font-mono text-[0.7rem] font-medium tracking-[0.15em] uppercase text-accent">
+            Enterprise SaaS Orchestration
+          </span>
+          <span className="w-8 h-px bg-accent"></span>
+        </div>
 
-      <div className="max-w-[1400px] mx-auto">
-        <h1 className="font-serif text-5xl md:text-7xl font-normal leading-tight mb-6 animate-[fadeUp_0.8s_ease-out]">
+        <h1 className="font-serif text-[clamp(2.5rem,6vw,4.5rem)] font-normal leading-[1.1] tracking-tight text-fg max-w-[52rem] mx-auto mb-6 animate-[fadeUp_0.7s_ease-out]">
           3 months of IT integration.
           <br />
-          <span className="italic text-accent">Done in 3 minutes.</span>
+          <em className="italic text-accent">Done in 3 minutes.</em>
         </h1>
 
-        <p className="text-xl text-muted-fg max-w-[600px] mx-auto mb-10 animate-[fadeUp_0.8s_ease-out_0.2s_backwards]">
-          An AI agent that orchestrates enterprise SaaS onboarding end-to-end —
-          from discovery and security reviews to execution and handoff.
+        <p className="text-lg text-muted-fg max-w-[36rem] mx-auto mb-12 leading-[1.75] animate-[fadeUp_0.7s_0.15s_ease-out_backwards]">
+          Your AI agent that orchestrates enterprise SaaS onboarding — discovery,
+          security, configuration, and compliance — with your team in control at
+          every decision gate.
         </p>
 
-        <div className="flex flex-wrap gap-4 justify-center animate-[fadeUp_0.8s_ease-out_0.4s_backwards]">
-          <a
-            href="#demo"
-            className="px-6 py-3 bg-accent text-white font-medium rounded hover:-translate-y-px hover:shadow-lg hover:shadow-accent/30 transition-all duration-200"
-          >
+        <div className="flex items-center justify-center gap-4 flex-wrap animate-[fadeUp_0.7s_0.25s_ease-out_backwards]">
+          <button className="bg-accent text-white border-none rounded-md px-8 py-3.5 font-sans text-base font-medium tracking-wider cursor-pointer min-h-[44px] transition-all duration-200 shadow-sm hover:bg-accent-2 hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(184,134,11,0.25)]">
             Watch the Agent Work
-          </a>
-          <a
-            href="#how-it-works"
-            className="px-6 py-3 bg-transparent border border-border text-fg font-medium rounded hover:border-accent hover:-translate-y-px hover:shadow-lg hover:shadow-accent/15 transition-all duration-200"
-          >
+          </button>
+          <button className="bg-transparent text-fg border border-fg rounded-md px-8 py-3.5 font-sans text-base font-medium tracking-wider cursor-pointer min-h-[44px] transition-all duration-200 hover:border-accent hover:text-accent hover:bg-muted">
             See the Architecture
-          </a>
+          </button>
         </div>
+
+        <div className="w-16 h-px bg-border mx-auto mt-16"></div>
       </div>
     </section>
   );
