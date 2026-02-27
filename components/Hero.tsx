@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="relative pt-40 pb-32 text-center">
@@ -23,12 +25,18 @@ export default function Hero() {
         </p>
 
         <div className="flex items-center justify-center gap-4 flex-wrap animate-[fadeUp_0.7s_0.25s_ease-out_backwards]">
-          <button className="bg-accent text-white border-none rounded-md px-8 py-3.5 font-sans text-base font-medium tracking-wider cursor-pointer min-h-[44px] transition-all duration-200 shadow-sm hover:bg-accent-2 hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(184,134,11,0.25)]">
-            Watch the Agent Work
-          </button>
-          <button className="bg-transparent text-fg border border-fg rounded-md px-8 py-3.5 font-sans text-base font-medium tracking-wider cursor-pointer min-h-[44px] transition-all duration-200 hover:border-accent hover:text-accent hover:bg-muted">
+          <Link
+            href="/implementation"
+            className="inline-block bg-accent text-white border-none rounded-md px-8 py-3.5 font-sans text-base font-medium tracking-wider cursor-pointer min-h-[44px] transition-all duration-200 shadow-sm hover:bg-accent-2 hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(184,134,11,0.25)] no-underline"
+          >
+            View Live Dashboard
+          </Link>
+          <Link
+            href="#how"
+            className="inline-block bg-transparent text-fg border border-fg rounded-md px-8 py-3.5 font-sans text-base font-medium tracking-wider cursor-pointer min-h-[44px] transition-all duration-200 hover:border-accent hover:text-accent hover:bg-muted no-underline"
+          >
             See the Architecture
-          </button>
+          </Link>
         </div>
 
         <div className="w-16 h-px bg-border mx-auto mt-16"></div>
