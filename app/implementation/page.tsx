@@ -265,6 +265,27 @@ export default function ImplementationDashboard() {
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <div>
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-sm text-muted-fg hover:text-accent transition-colors duration-200 mb-2 no-underline"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
+                </svg>
+                <span className="font-mono text-xs tracking-wider uppercase">
+                  Back to Home
+                </span>
+              </Link>
               <h1 className="font-serif text-2xl font-normal mb-1">
                 Salesforce Sales Cloud — 500 users
               </h1>
