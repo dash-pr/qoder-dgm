@@ -6,11 +6,12 @@
 
 @layer base {
   body {
-    @apply bg-bg text-fg;
+    @apply bg-bg text-fg font-sans;
     font-size: 16px;
     line-height: 1.75;
     letter-spacing: 0.01em;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 

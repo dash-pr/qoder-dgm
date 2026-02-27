@@ -19,9 +19,9 @@ const config: Config = {
         card: "#FFFFFF",
       },
       fontFamily: {
-        serif: ["Playfair Display", "serif"],
-        sans: ["Source Sans 3", "sans-serif"],
-        mono: ["IBM Plex Mono", "monospace"],
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'monospace'],
       },
     },
   },
